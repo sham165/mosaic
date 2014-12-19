@@ -22,3 +22,15 @@ Feature: Adopting Puppies
       | Credit card    |
       | Purchase order |
       | Check          |
+
+  Scenario: Demonstrating Transformations
+    When I print the value for today
+    And I print the value for tomorrow
+    And I print the value for 6 days from today
+    And I added line item 1
+    Then I am happy
+
+  Scenario: Please thank the person for the order
+    Given I have an order for "Mickey Mouse"
+    When I process that order
+    Then I should see "Please thank Mickey Mouse for the order"
